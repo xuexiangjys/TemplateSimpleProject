@@ -22,8 +22,6 @@
 
 * [AndroidAutoSize 优秀的屏幕适配方案](https://github.com/JessYanCoding/AndroidAutoSize)
 
-* [butterknife 控件依赖注入框架](https://github.com/JakeWharton/butterknife)
-
 * [leakcanary 内存泄漏检测](https://github.com/square/leakcanary)
 
 ## 使用方式
