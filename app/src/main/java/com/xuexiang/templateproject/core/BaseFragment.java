@@ -19,10 +19,13 @@ package com.xuexiang.templateproject.core;
 
 import android.content.res.Configuration;
 import android.os.Parcelable;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.viewbinding.ViewBinding;
 
 import com.umeng.analytics.MobclickAgent;
 import com.xuexiang.xpage.base.XPageActivity;
@@ -46,9 +49,39 @@ import java.lang.reflect.Type;
  * @author xuexiang
  * @since 2018/5/25 下午3:44
  */
-public abstract class BaseFragment extends XPageFragment {
+public abstract class BaseFragment<Binding extends ViewBinding> extends XPageFragment {
 
     private IMessageLoader mIMessageLoader;
+
+    /**
+     * ViewBinding
+     */
+    protected Binding binding;
+
+    @Override
+    protected View inflateView(LayoutInflater inflater, ViewGroup container) {
+        binding = viewBindingInflate(inflater, container);
+        return binding.getRoot();
+    }
+
+    /**
+     * 构建ViewBinding
+     *
+     * @param inflater  inflater
+     * @param container 容器
+     * @return ViewBinding
+     */
+    @NonNull
+    protected abstract Binding viewBindingInflate(LayoutInflater inflater, ViewGroup container);
+
+    /**
+     * 获取Binding
+     *
+     * @return Binding
+     */
+    public Binding getBinding() {
+        return binding;
+    }
 
     @Override
     protected void initPage() {
@@ -92,6 +125,16 @@ public abstract class BaseFragment extends XPageFragment {
             initTitle();
         }
     }
+
+    @Override
+    public void onDestroyView() {
+        if (mIMessageLoader != null) {
+            mIMessageLoader.dismiss();
+        }
+        super.onDestroyView();
+        binding = null;
+    }
+
 
     @Override
     public void onResume() {

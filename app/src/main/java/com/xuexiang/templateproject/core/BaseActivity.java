@@ -19,16 +19,18 @@ package com.xuexiang.templateproject.core;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.viewbinding.ViewBinding;
 
 import com.xuexiang.xpage.base.XPageActivity;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.core.CoreSwitchBean;
 import com.xuexiang.xrouter.facade.service.SerializationService;
 import com.xuexiang.xrouter.launcher.XRouter;
-import com.xuexiang.xui.XUI;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /**
@@ -37,9 +39,12 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
  * @author XUE
  * @since 2019/3/22 11:21
  */
-public class BaseActivity extends XPageActivity {
+public class BaseActivity<Binding extends ViewBinding> extends XPageActivity {
 
-    Unbinder mUnbinder;
+    /**
+     * ViewBinding
+     */
+    protected Binding binding;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -48,10 +53,42 @@ public class BaseActivity extends XPageActivity {
     }
 
     @Override
+    protected View getCustomRootView() {
+        binding = viewBindingInflate(getLayoutInflater());
+        return binding != null ? binding.getRoot() : null;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        XUI.initTheme(this);
+        initStatusBarStyle();
         super.onCreate(savedInstanceState);
-        mUnbinder = ButterKnife.bind(this);
+    }
+
+    /**
+     * 构建ViewBinding
+     *
+     * @param inflater  inflater
+     * @return ViewBinding
+     */
+    @Nullable
+    protected Binding viewBindingInflate(LayoutInflater inflater) {
+        return null;
+    }
+
+    /**
+     * 获取Binding
+     *
+     * @return Binding
+     */
+    public Binding getBinding() {
+        return binding;
+    }
+
+    /**
+     * 初始化状态栏的样式
+     */
+    protected void initStatusBarStyle() {
+
     }
 
     /**
@@ -96,12 +133,6 @@ public class BaseActivity extends XPageActivity {
      */
     public String serializeObject(Object object) {
         return XRouter.getInstance().navigation(SerializationService.class).object2Json(object);
-    }
-
-    @Override
-    protected void onRelease() {
-        mUnbinder.unbind();
-        super.onRelease();
     }
 
 }

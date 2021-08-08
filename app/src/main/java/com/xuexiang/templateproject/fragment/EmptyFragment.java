@@ -17,8 +17,13 @@
 
 package com.xuexiang.templateproject.fragment;
 
-import com.xuexiang.templateproject.R;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+
 import com.xuexiang.templateproject.core.BaseFragment;
+import com.xuexiang.templateproject.databinding.FragmentEmptyBinding;
 import com.xuexiang.xpage.annotation.Page;
 
 /**
@@ -28,16 +33,12 @@ import com.xuexiang.xpage.annotation.Page;
  * @since 2019-07-08 00:52
  */
 @Page(name = "空页面")
-public class EmptyFragment extends BaseFragment {
+public class EmptyFragment extends BaseFragment<FragmentEmptyBinding> {
 
-    /**
-     * 布局的资源id
-     *
-     * @return
-     */
+    @NonNull
     @Override
-    protected int getLayoutId() {
-        return R.layout.fragment_empty;
+    protected FragmentEmptyBinding viewBindingInflate(LayoutInflater inflater, ViewGroup container) {
+        return FragmentEmptyBinding.inflate(inflater, container, false);
     }
 
     /**
@@ -47,4 +48,6 @@ public class EmptyFragment extends BaseFragment {
     protected void initViews() {
 
     }
+
+
 }

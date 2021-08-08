@@ -74,7 +74,7 @@ public final class XBasicLibInit {
      */
     private static void initXPage(Application application) {
         PageConfig.getInstance()
-                .debug(MyApp.isDebug() ? "PageLog" : null)
+                .debug(MyApp.isDebug())
                 .setContainActivityClazz(BaseActivity.class)
                 .init(application);
     }
