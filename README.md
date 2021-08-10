@@ -2,6 +2,8 @@
 
 简化版的Android空壳模版工程，快速搭建（集成了XUI、XUtil、XAOP、XPage、友盟统计和walle多渠道打包)
 
+**【注意】** 本模板适用于Android Studio 4.0及以上版本，如果你的Android Studio低于 4.0版本，可使用`butterknife`分支。
+
 ## 关于我
 
 [![github](https://img.shields.io/badge/GitHub-xuexiangjys-blue.svg)](https://github.com/xuexiangjys)   [![csdn](https://img.shields.io/badge/CSDN-xuexiangjys-green.svg)](http://blog.csdn.net/xuexiangjys)   [![简书](https://img.shields.io/badge/简书-xuexiangjys-red.svg)](https://www.jianshu.com/u/6bf605575337)   [![掘金](https://img.shields.io/badge/掘金-xuexiangjys-brightgreen.svg)](https://juejin.im/user/598feef55188257d592e56ed)   [![知乎](https://img.shields.io/badge/知乎-xuexiangjys-violet.svg)](https://www.zhihu.com/people/xuexiangjys) 
@@ -21,6 +23,8 @@
 除此之外，还集成了其他优秀的第三方库:
 
 * [AndroidAutoSize 优秀的屏幕适配方案](https://github.com/JessYanCoding/AndroidAutoSize)
+
+* [ViewBinding Google推荐的视图绑定工具](https://developer.android.google.cn/topic/libraries/view-binding)
 
 * [leakcanary 内存泄漏检测](https://github.com/square/leakcanary)
 
