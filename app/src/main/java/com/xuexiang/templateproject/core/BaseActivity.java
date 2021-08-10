@@ -49,9 +49,16 @@ public class BaseActivity extends XPageActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        XUI.initTheme(this);
+        initStatusBarStyle();
         super.onCreate(savedInstanceState);
         mUnbinder = ButterKnife.bind(this);
+    }
+
+    /**
+     * 初始化状态栏的样式
+     */
+    protected void initStatusBarStyle() {
+
     }
 
     /**
