@@ -4,6 +4,8 @@
 
 **【注意】** 本模板适用于Android Studio 4.0及以上版本，如果你的Android Studio低于 4.0版本，可使用[butterknife](https://github.com/xuexiangjys/TemplateSimpleProject/tree/butterknife)分支。
 
+**【Kotlin版本】** 如果你想使用Kotlin语言，那么请移步[TemplateSimpleProject-kotlin](https://github.com/xuexiangjys/TemplateSimpleProject-kotlin)
+
 ## 关于我
 
 | 公众号   | 掘金     |  知乎    |  CSDN   |   简书   |   思否  |   哔哩哔哩  |   今日头条
