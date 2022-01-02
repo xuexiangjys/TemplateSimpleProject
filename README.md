@@ -4,6 +4,8 @@
 
 **【注意】** 本分支适用于Android Studio 4.0以下的版本，如果你想使用Android Studio最新版本，请移步[master](https://github.com/xuexiangjys/TemplateSimpleProject/tree/master)主分支。
 
+**【Kotlin版本】** 如果你想使用Kotlin语言，那么请移步[TemplateSimpleProject-kotlin](https://github.com/xuexiangjys/TemplateSimpleProject-kotlin)
+
 ## 关于我
 
 | 公众号   | 掘金     |  知乎    |  CSDN   |   简书   |   思否  |   哔哩哔哩  |   今日头条
