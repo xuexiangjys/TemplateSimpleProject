@@ -20,9 +20,9 @@ package com.xuexiang.templateproject.fragment;
 import android.view.KeyEvent;
 
 import com.xuexiang.templateproject.core.BaseContainerFragment;
-import com.xuexiang.templateproject.utils.XToastUtils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
+import com.xuexiang.xui.utils.XToastUtils;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
 import com.xuexiang.xutil.XUtil;
 import com.xuexiang.xutil.common.ClickUtils;
