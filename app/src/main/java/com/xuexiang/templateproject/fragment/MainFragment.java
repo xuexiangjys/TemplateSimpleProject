@@ -35,7 +35,7 @@ import com.xuexiang.xutil.common.ClickUtils;
 public class MainFragment extends BaseContainerFragment implements ClickUtils.OnClick2ExitListener {
 
     @Override
-    protected Class[] getPagesClasses() {
+    protected Class<?>[] getPagesClasses() {
         return new Class[] {
                 //此处填写fragment
                 EmptyFragment.class

@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.xuexiang.templateproject.core.BaseFragment;
 import com.xuexiang.templateproject.databinding.FragmentEmptyBinding;
@@ -37,8 +38,8 @@ public class EmptyFragment extends BaseFragment<FragmentEmptyBinding> {
 
     @NonNull
     @Override
-    protected FragmentEmptyBinding viewBindingInflate(LayoutInflater inflater, ViewGroup container) {
-        return FragmentEmptyBinding.inflate(inflater, container, false);
+    protected FragmentEmptyBinding viewBindingInflate(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, boolean attachToRoot) {
+        return FragmentEmptyBinding.inflate(inflater, container, attachToRoot);
     }
 
     /**
